@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 const imagenes = [
-  '/next.svg',    // Imagen 1 (asegúrate que exista en /public)
-  '/vercel.svg',  // Imagen 2 (también debe estar en /public)
+  '/next.svg',    // Imagen 1 
+  '/vercel.svg',  // Imagen 2 
 ];
 
 export default function CambiarImagen() {
