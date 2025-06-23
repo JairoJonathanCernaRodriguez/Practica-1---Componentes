@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 const imagenes = [
-  '/next.svg',    // Imagen 1 
-  '/vercel.svg',  // Imagen 2 
+  '/file.svg',   
+  '/globe.svg',  
 ];
 
 export default function CambiarImagen() {
@@ -16,7 +16,6 @@ export default function CambiarImagen() {
 
   return (
     <div>
-      <br />
       <img src={imagenes[index]} alt="Imagen cambiante" width={200} height={200} />
       <br />
       <button onClick={cambiarImagen}>Cambiar imagen</button>
