@@ -25,7 +25,7 @@ export default function Home() {
       {/* Componentes práctica 2 */}
       <Contador />
       <CambiarImagen />
-      <CambiarFondo onCambiarColor={setFondo} /> {/* 👈 Aquí ya está debajo */}
+      <CambiarFondo onCambiarColor={setFondo} />
     </main>
   );
 }
