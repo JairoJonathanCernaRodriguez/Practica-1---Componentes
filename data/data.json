@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "nombre": "Carlos Pérez",
+    "descripcion": "Desarrollador Frontend",
+    "icono": "user",
+    "imagen": "/file.svg"
+  },
+  {
+    "id": 2,
+    "nombre": "Laura Sánchez",
+    "descripcion": "Diseñadora UI/UX",
+    "icono": "paintBrush",
+    "imagen": "/globe.svg"
+  },
+  {
+    "id": 3,
+    "nombre": "Andrés López",
+    "descripcion": "Ingeniero de Datos",
+    "icono": "briefcase",
+    "imagen": "/window.svg"
+  },
+  {
+    "id": 4,
+    "nombre": "Sofía Gómez",
+    "descripcion": "Project Manager",
+    "icono": "user",
+    "imagen": "/file.svg"
+  },
+  {
+    "id": 5,
+    "nombre": "Miguel Torres",
+    "descripcion": "QA Tester",
+    "icono": "paintBrush",
+    "imagen": "/globe.svg"
+  },
+  {
+    "id": 6,
+    "nombre": "Ana Ramírez",
+    "descripcion": "Backend Developer",
+    "icono": "briefcase",
+    "imagen": "/vercel.svg"
+  },
+  {
+    "id": 7,
+    "nombre": "David Mendoza",
+    "descripcion": "Fullstack Developer",
+    "icono": "user",
+    "imagen": "/window.svg"
+  },
+  {
+    "id": 8,
+    "nombre": "Valeria Cruz",
+    "descripcion": "Diseñadora Gráfica",
+    "icono": "paintBrush",
+    "imagen": "/file.svg"
+  },
+  {
+    "id": 9,
+    "nombre": "Luis Herrera",
+    "descripcion": "Analista de Negocios",
+    "icono": "briefcase",
+    "imagen": "/globe.svg"
+  },
+  {
+    "id": 10,
+    "nombre": "Natalia Ríos",
+    "descripcion": "Scrum Master",
+    "icono": "user",
+    "imagen": "/window.svg"
+  },
+  {
+    "id": 11,
+    "nombre": "Jorge Fernández",
+    "descripcion": "DevOps Engineer",
+    "icono": "paintBrush",
+    "imagen": "/file.svg"
+  },
+  {
+    "id": 12,
+    "nombre": "Isabella Díaz",
+    "descripcion": "Copywriter",
+    "icono": "briefcase",
+    "imagen": "/globe.svg"
+  },
+  {
+    "id": 13,
+    "nombre": "Emilio Vargas",
+    "descripcion": "Especialista SEO",
+    "icono": "user",
+    "imagen": "/vercel.svg"
+  },
+  {
+    "id": 14,
+    "nombre": "Paula Castillo",
+    "descripcion": "Content Manager",
+    "icono": "paintBrush",
+    "imagen": "/window.svg"
+  },
+  {
+    "id": 15,
+    "nombre": "Gabriel Soto",
+    "descripcion": "Product Owner",
+    "icono": "briefcase",
+    "imagen": "/vercel.svg"
+  },
+  {
+    "id": 16,
+    "nombre": "Camila Morales",
+    "descripcion": "Diseñadora Web",
+    "icono": "user",
+    "imagen": "/globe.svg"
+  },
+  {
+    "id": 17,
+    "nombre": "Daniel Reyes",
+    "descripcion": "Administrador de Sistemas",
+    "icono": "paintBrush",
+    "imagen": "/window.svg"
+  },
+  {
+    "id": 18,
+    "nombre": "Renata Navarro",
+    "descripcion": "Data Analyst",
+    "icono": "briefcase",
+    "imagen": "/file.svg"
+  },
+  {
+    "id": 19,
+    "nombre": "Iván Campos",
+    "descripcion": "Especialista Cloud",
+    "icono": "user",
+    "imagen": "/globe.svg"
+  },
+  {
+    "id": 20,
+    "nombre": "Mariana Flores",
+    "descripcion": "Arquitecta de Software",
+    "icono": "paintBrush",
+    "imagen": "/vercel.svg"
+  }
+]
