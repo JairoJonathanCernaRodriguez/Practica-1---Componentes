@@ -37,7 +37,7 @@ button {
 }
 
 button:hover {
-  background-color: #333;
+  background-color: #3c3c3c;
 }
 
 .contador-box {
@@ -53,4 +53,42 @@ button:hover {
   margin-bottom: 1rem;
   background-color: #0a0a0a;
   border-radius: 8px;
+  color: #ffffff;
+}
+
+/* Quitar el posicionamiento absoluto para que la leyenda no esté encima de la imagen */
+.carousel .legend {
+  position: relative !important;  /* cambia de absolute a relative */
+  background: transparent !important;  /* quita el fondo oscuro */
+  color: orange !important;        /* texto naranja */
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  bottom: auto !important;         /* quita la posición bottom */
+  margin-top: 0.5rem;              /* espacio arriba */
+  text-align: center;
+}
+
+/* Flechas verdes */
+.carousel .control-arrow {
+  background-color: green !important;
+  color: white !important;
+}
+
+/* Puntos verdes */
+.carousel .dot {
+  background: lightgreen !important;
+}
+.carousel .dot.selected {
+  background: green !important;
+}
+
+.boton-modal {
+  background-color: #a76c28 !important; /* verde */
+  color: white !important;
+  border: none;
+}
+
+.boton-Toast {
+  background-color: #1ba4ff !important;
+  color: white !important;
 }
