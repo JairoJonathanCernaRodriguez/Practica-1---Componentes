@@ -80,7 +80,7 @@ const validarFecha = (valor: string) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
   const { name, value, type } = e.target;
 
-  let valorFinal: any = value;
+let valorFinal: string | boolean | number = value;
 
   if (type === 'checkbox' && e.target instanceof HTMLInputElement) {
     valorFinal = e.target.checked;
