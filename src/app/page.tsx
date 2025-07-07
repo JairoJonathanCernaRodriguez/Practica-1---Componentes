@@ -23,7 +23,7 @@ export default function Home() {
     <main style={{ backgroundColor: fondo, padding: '2rem', minHeight: '100vh' }}>
       {/* Componentes práctica 1 */}
       <Titulo texto="Practica 1" color="navy" tamaño="5rem" fuente="Arial" />
-      <Parrafo texto="Párrafo con props." color="blue" tamaño="3rem" fuente="Verdana" />
+      <Parrafo texto="Párrafo con props." color="red" tamaño="3rem" fuente="Verdana" />
       <Imagen src="/next.svg" alt="Logo Next.js" ancho={200} alto={200} />
 
       <hr style={{ margin: '2rem 0', border: 'none', height: '2px', backgroundColor: 'white' }} />
