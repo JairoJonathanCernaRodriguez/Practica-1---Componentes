@@ -1,4 +1,6 @@
 'use client';
+import { Table } from 'reactstrap';
+import { FaTrash, FaEdit } from 'react-icons/fa';
 
 import React, { useState } from 'react';
 import {
@@ -16,6 +18,8 @@ import Titulo from '../../../components/Titulo';
 
 export default function FormularioPage() {
     const [fondo] = useState('mediumTurquoise');
+    
+
   const [form, setForm] = useState({
     nombre: '',
     apellido: '',
@@ -36,10 +40,11 @@ export default function FormularioPage() {
   fecha: ''
 });
 
+const [registros, setRegistros] = useState<any[]>([]);
 
-  const [modal, setModal] = useState(false);
+const [modal, setModal] = useState(false);
 
-  const toggle = () => setModal(!modal);
+const toggle = () => setModal(!modal);
 
 // Funciones de validación (ejemplo para nombre)
   const validarNombre = (nombre: string) => {
@@ -132,7 +137,6 @@ let valorFinal: string | boolean | number = value;
       notas: '',
       fecha: ''
     });
-
    setErrors({
       nombre: '',
       apellido: '',
@@ -141,6 +145,39 @@ let valorFinal: string | boolean | number = value;
       fecha: ''
     });
   };
+
+const guardar = () => {
+  if (modoEdicion && registroEditarIndex !== null) {
+    const actualizados = [...registros];
+    actualizados[registroEditarIndex] = form;
+    setRegistros(actualizados);
+    setModoEdicion(false);
+    setRegistroEditarIndex(null);
+  } else {
+    setRegistros(prev => [...prev, form]);
+  }
+
+  setModal(false); // Cierra el modal después de guardar
+  reiniciar();     // Limpia el formulario
+};
+
+
+const eliminarRegistro = (index: number) => {
+  const nuevosRegistros = registros.filter((_, i) => i !== index);
+  setRegistros(nuevosRegistros);
+};
+
+const [modoEdicion, setModoEdicion] = useState(false);
+const [registroEditarIndex, setRegistroEditarIndex] = useState<number | null>(null);
+
+const editarRegistro = (index: number) => {
+  const registro = registros[index];
+  setForm(registro);
+  setRegistroEditarIndex(index);
+  setModoEdicion(true);
+  setModal(true);
+};
+
 
 return (
     <main style={{ backgroundColor: fondo, padding: '2rem', minHeight: '100vh' }}>
@@ -221,6 +258,9 @@ return (
         </FormGroup>
 
         <div style={{ marginTop: '1rem' }}>
+         <Button color="success" onClick={guardar} style={{ marginRight: '1rem' }}>
+           Guardar
+          </Button>
           <Button color="primary" onClick={toggle} style={{ marginRight: '1rem' }}>
             Mostrar
           </Button>
@@ -230,12 +270,56 @@ return (
         </div>
       </Form>
 
-      <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Datos del formulario</ModalHeader>
-        <ModalBody>
-          <pre>{JSON.stringify(form, null, 2)}</pre>
-        </ModalBody>
-      </Modal>
+{registros.length > 0 && (
+ <Table striped bordered style={{ marginTop: '2rem' }}>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Edad</th>
+      <th>Rol</th>
+      <th>Notas</th>
+      <th>Fecha</th>
+      <th>Acciones</th> 
+    </tr>
+  </thead>
+  <tbody>
+    {registros.map((r, index) => (
+      <tr key={index}>
+        <td>{index + 1}</td>
+        <td>{r.nombre}</td>
+        <td>{r.apellido}</td>
+        <td>{r.email}</td>
+        <td>{r.edad}</td>
+        <td>{r.rol}</td>
+        <td>{r.notas}</td>
+        <td>{r.fecha}</td>
+        <td>
+          <Button color="danger" size="sm" onClick={() => eliminarRegistro(index)}>
+            <FaTrash /> 
+          </Button>
+          <Button color="warning" size="sm" onClick={() => editarRegistro(index)} style={{ marginRight: '0.5rem' }}>
+            <FaEdit />
+          </Button>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</Table>
+)}
+
+
+
+{!modoEdicion && (
+  <Modal isOpen={modal} toggle={toggle}>
+    <ModalHeader toggle={toggle}>Datos del formulario</ModalHeader>
+    <ModalBody>
+      <pre>{JSON.stringify(form, null, 2)}</pre>
+    </ModalBody>
+  </Modal>
+  )}
     </main>
   );
 }
