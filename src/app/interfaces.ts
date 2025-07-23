@@ -1,19 +1,29 @@
-export interface Direccion {
+export interface Address {
   city: string;
   street: string;
   number: number;
   zipcode: string;
 }
 
-export interface Nombre {
+export interface Name {
   firstname: string;
   lastname: string;
 }
 
-export interface Usuario {
+export interface User {
   email: string;
   username: string;
   phone: string;
-  name: Nombre;
-  address: Direccion;
+  name: Name;
+  address: Address;
+}
+
+//Products
+export interface Product {
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string;
 }
