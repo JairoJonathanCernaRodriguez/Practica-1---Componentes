@@ -1,26 +1,32 @@
 'use client';
-import { Table } from 'reactstrap';
-import { FaTrash, FaEdit } from 'react-icons/fa';
 
+import { FaTrash, FaEdit } from 'react-icons/fa';
+import Titulo from '../../../components/Titulo';
 import React, { useState } from 'react';
+
 import {
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Modal,
-  ModalHeader,
-  ModalBody
+  Button,Form,FormGroup,Label,Input,
+  Modal,ModalHeader,ModalBody, Table
 } from 'reactstrap';
 
-import Titulo from '../../../components/Titulo';
+interface Registro {
+  nombre: string;
+  apellido: string;
+  email: string;
+  contraseña: string;
+  edad: number;
+  genero: string;
+  rol: string;
+  opciones: boolean;
+  notas: string;
+  fecha: string;
+}
+
 
 export default function FormularioPage() {
     const [fondo] = useState('mediumTurquoise');
-    
+  const [form, setForm] = useState<Registro>({
 
-  const [form, setForm] = useState({
     nombre: '',
     apellido: '',
     email: '',
@@ -40,13 +46,14 @@ export default function FormularioPage() {
   fecha: ''
 });
 
-const [registros, setRegistros] = useState<any[]>([]);
+const [registros, setRegistros] = useState<Registro[]>([]);
+
 
 const [modal, setModal] = useState(false);
 
 const toggle = () => setModal(!modal);
 
-// Funciones de validación (ejemplo para nombre)
+// Funciones de validación 
   const validarNombre = (nombre: string) => {
     if (!/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(nombre)) {
       return 'Solo se permiten letras y espacios';
@@ -157,8 +164,8 @@ const guardar = () => {
     setRegistros(prev => [...prev, form]);
   }
 
-  setModal(false); // Cierra el modal después de guardar
-  reiniciar();     // Limpia el formulario
+  setModal(false); 
+  reiniciar();     
 };
 
 
@@ -309,8 +316,6 @@ return (
   </tbody>
 </Table>
 )}
-
-
 
 {!modoEdicion && (
   <Modal isOpen={modal} toggle={toggle}>
